@@ -1,5 +1,5 @@
 # Hosman_Hackathon
-This app for Open Data Challange Hackathon.
-App name Hosman.
-minimum android sdk 19
-compile sdk version 30
+This app for Open Data Challange Hackathon. </br>
+App name Hosman.</br>
+minimum android sdk 19</br>
+compile sdk version 30</br>
