@@ -14,8 +14,8 @@
         android:title="Search"
         android:icon="@drawable/searching_24"/>
     <item
-        android:id="@+id/actionAccount"
-        android:title="Account"
+        android:id="@+id/actionProfile"
+        android:title="Profile"
         android:icon="@drawable/person_24"/>
 
 </menu>

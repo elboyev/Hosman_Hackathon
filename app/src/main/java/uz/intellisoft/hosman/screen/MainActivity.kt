@@ -1,7 +1,8 @@
-package uz.intellisoft.hosman
+package uz.intellisoft.hosman.screen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import uz.intellisoft.hosman.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
