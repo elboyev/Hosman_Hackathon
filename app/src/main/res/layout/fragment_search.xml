@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E8CC4F"
+    android:background="#372121"
     tools:context=".screen.search.SearchFragment">
 
 </FrameLayout>

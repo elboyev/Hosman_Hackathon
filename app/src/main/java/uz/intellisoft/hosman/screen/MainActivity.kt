@@ -3,6 +3,8 @@ package uz.intellisoft.hosman.screen
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import uz.intellisoft.hosman.R
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(R.id.flcontainer,likedFragment,likedFragment.tag).hide(likedFragment).commit()
         supportFragmentManager.beginTransaction().add(R.id.flcontainer,searchFragment,searchFragment.tag).hide(searchFragment).commit()
         supportFragmentManager.beginTransaction().add(R.id.flcontainer,profileFragment,profileFragment.tag).hide(profileFragment).commit()
+
 
         supportFragmentManager.beginTransaction().show(activefragment).commit()
         bottomnavmenu.setOnNavigationItemSelectedListener {
