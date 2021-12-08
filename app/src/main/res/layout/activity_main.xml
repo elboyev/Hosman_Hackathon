@@ -22,6 +22,7 @@
                 android:id="@+id/menu"
                 android:layout_width="36dp"
                 android:layout_height="wrap_content"
+                android:contentDescription="menuimg"
                 android:src="@drawable/menu_24" />
             <TextView
                 android:layout_width="0dp"
@@ -31,6 +32,7 @@
                 android:textSize="24sp"
                 android:gravity="center"/>
             <ImageView
+                android:contentDescription=""
                 android:layout_width="36dp"
                 android:layout_height="36dp"/>
 

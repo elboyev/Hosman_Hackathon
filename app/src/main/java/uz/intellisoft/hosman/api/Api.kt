@@ -9,6 +9,6 @@ import uz.intellisoft.hosman.model.OfferModel
 interface Api {
 
     @GET("get_offers")
-    fun getOffers(param: Callback<BaseResponse<List<OfferModel>>>): Call<BaseResponse<List<OfferModel>>>
+    fun getOffers(): Call<BaseResponse<List<OfferModel>>>
 
 }

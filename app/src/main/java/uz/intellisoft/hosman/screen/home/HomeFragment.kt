@@ -35,36 +35,38 @@ class HomeFragment : Fragment() {
 
         val retrofit=Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("http://osonsavdo.sd-group.uz/api").build()
+            .baseUrl("http://osonsavdo.sd-group.uz/api/")
+            .build()
 
         val api = retrofit.create(Api::class.java)
 
-        api.getOffers(object : Callback<BaseResponse<List<OfferModel>>>{
+        api.getOffers().enqueue(object : Callback<BaseResponse<List<OfferModel>>>{
+
             override fun onResponse(
                 call: Call<BaseResponse<List<OfferModel>>>,
                 response: Response<BaseResponse<List<OfferModel>>>
             ) {
-                offers=response.body()!!.data
+
                 if (response.isSuccessful && response.body()!!.success){
+
+                    offers=response.body()!!.data
 
                     carouselView.setImageListener { position, imageView ->
                         Glide.with(imageView).load("http://osonsavdo.sd-group.uz/images/${offers[position].image}").into(imageView)
                     }
                     carouselView.pageCount=offers.count()
-                }else
+                }else{
                     Toast.makeText(requireActivity(),response.body()!!.message,Toast.LENGTH_LONG).show()
+                }
 
             }
-
             override fun onFailure(call: Call<BaseResponse<List<OfferModel>>>, t: Throwable) {
                 Toast.makeText(requireActivity(),t.localizedMessage,Toast.LENGTH_LONG).show()
             }
         })
 
-
     }
     companion object {
-
         @JvmStatic
         fun newInstance() = HomeFragment()
     }

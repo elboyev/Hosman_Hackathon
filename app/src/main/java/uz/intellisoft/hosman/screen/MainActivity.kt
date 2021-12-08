@@ -1,11 +1,8 @@
 package uz.intellisoft.hosman.screen
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import uz.intellisoft.hosman.R
 import uz.intellisoft.hosman.screen.home.HomeFragment
@@ -36,18 +33,23 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().show(activefragment).commit()
         bottomnavmenu.setOnNavigationItemSelectedListener {
 
-            if (it.itemId==R.id.actionHome){
-                supportFragmentManager.beginTransaction().hide(activefragment).show(homeFragment).commit()
-                activefragment=homeFragment
-            } else if (it.itemId==R.id.actionFavourite){
-                supportFragmentManager.beginTransaction().hide(activefragment).show(likedFragment).commit()
-                activefragment=likedFragment
-            } else if (it.itemId==R.id.actionSearch){
-                supportFragmentManager.beginTransaction().hide(activefragment).show(searchFragment).commit()
-                activefragment=searchFragment
-            } else if (it.itemId==R.id.actionProfile){
-                supportFragmentManager.beginTransaction().hide(activefragment).show(profileFragment).commit()
-                activefragment=profileFragment
+            when (it.itemId) {
+                R.id.actionHome -> {
+                    supportFragmentManager.beginTransaction().hide(activefragment).show(homeFragment).commit()
+                    activefragment=homeFragment
+                }
+                R.id.actionFavourite -> {
+                    supportFragmentManager.beginTransaction().hide(activefragment).show(likedFragment).commit()
+                    activefragment=likedFragment
+                }
+                R.id.actionSearch -> {
+                    supportFragmentManager.beginTransaction().hide(activefragment).show(searchFragment).commit()
+                    activefragment=searchFragment
+                }
+                R.id.actionProfile -> {
+                    supportFragmentManager.beginTransaction().hide(activefragment).show(profileFragment).commit()
+                    activefragment=profileFragment
+                }
             }
 
             return@setOnNavigationItemSelectedListener true
